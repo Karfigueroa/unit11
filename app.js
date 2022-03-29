@@ -39,5 +39,41 @@ function userTurn(){
               break
             } 
         }while (youscore<16)
+        if (youscore<=20){
+            alert("Now it is the computer's turn")
+        }
     } 
+}
+
+function computerTurn(){
+    //This function will contain a parameter so you can enter the random number as an argument
+    youscore = 0
+      
+    compscore = 0
+      
+    do{
+        compscore = compscore + ran
+      
+        alert(`The computer drew the number ${ran}, it’s new total is ${compscore}`)
+      
+        if (compscore > 20) {
+            alert (` The computer has exceeded the limit meaning you have won`)
+            persontotal++
+            break
+        }
+    }while (compscore<16)
+        
+}
+
+function compareNum(){
+//This function will container two parameters so you can enter the user number and the computer number.
+}
+
+function gameFunction(){
+    // ask the users if they want to play again
+    //master function that runs everything
+   do{ 
+    var decision = prompt (`Do you want to play again? Press "y" for yes and “n” for no.`)
+        console.log(decision)
+    }while (decision == "y")
 }
