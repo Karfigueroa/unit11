@@ -72,6 +72,12 @@ function compareNum(){
 function gameFunction(){
     // ask the users if they want to play again
     //master function that runs everything
+askName()
+ranNumber()
+userTurn()
+computerTurn()
+compareNum()
+
    do{ 
     var decision = prompt (`Do you want to play again? Press "y" for yes and “n” for no.`)
         console.log(decision)
