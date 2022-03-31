@@ -1,4 +1,4 @@
-
+//unit 11
 function userName(){
 	var name = prompt(`what is your name?`)
 return name
@@ -22,31 +22,33 @@ function userTurn(){
     do{
 		var numbers = Math.floor(Math.random() * 10) + 1;
 		userNumber = userNumber + numbers;
-		alert(`The number you got was ${numbers} the new total s ${userNumber}`)
+		alert(`The number you got was ${numbers} the new total is ${userNumber}`)
 		var play = prompt (`If you wnat to go again press “y”`)
-	}while ((userNumber <= 19) && (play == `y`))
+	}while ((userNumber <= 19) && (play == "y"))
 	return userNumber
 }
 function scores(){
-	alert(` The final score is computer: ${compNumber} and you: ${userNumber}`)
+	alert(` The final score is computer- ${compNumber} and you- ${userNumber}`)
 }
+
+//scoring
 
 function scoring(userNumber, compNumber){
 	if ((compNumber > 20) && (userNumber <21) && (userNumber > compNumber)) {
 		alert(`you won with a score of ${userNumber}`)
 		userScore++
-		alert (`The score is computer; ${compScore} Human; ${userScore}`)
+		alert (`The score is computer- ${compScore} you- ${userScore}`)
 	} else if (( compNumber > 20 )&& (userNumber < 21) && (userNumber > compNumber)){
 	    alert(` you won with a score of ${userNumber}`)
 	    userScore++
-	    alert(`the score is computer: ${compScore} human: ${userScore}`)
+	    alert(`the score is computer- ${compScore} you- ${userScore}`)
 	} else if  ((compNumber < 21) && (userNumber < 21) && (compNumber > userNumber)) {
 		alert(`the computer won with a score of ${userNumber}`)
 		compScore++
-		alert(`The score is computer; ${compScore} human; ${userScore}`)
+		alert(`The score is computer- ${compScore} you- ${userScore}`)
 	}else if ((compNumber<20) && (userNumber<21) && (compNumber == userNumber)){
 	    alert(`You have tied with a score of ${userNumber}`)
-	    alert(`The score is computer; ${compScore} human; ${userScore}`)
+	    alert(`The score is computer- ${compScore} you- ${userScore}`)
 	}
 }
 
