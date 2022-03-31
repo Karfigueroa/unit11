@@ -1,85 +1,52 @@
-//the user will go first, and then the computer.
 
-function askName(){
-    var n = prompt(`Hello! Welcome to a computer vs human game to see who can get closer to 20 between you and the computer. 
-    You will draw a # from 1-10 and the computer will stop at 16. What is your name?`)
-    return n
+function userName(){
+	var name = prompt(`what is your name?`)
+return name
 }
 
-function ranNumber(){
-    var ran = Math.floor(Math.random() *10) + 1
-    return ran
+var compScore = 0;
+var userScore = 0;
+var compNumber = 0;
+
+function computerNum(){
+    do{
+	    var numbers = Math.floor(Math.random() * 10) + 1;
+	    compNumber = compNumber + numbers;
+	    alert(` The computer got ${numbers}. The computers new total is ${compNumber}`)
+    }while (compNumber <= 16)
+return compNumber
 }
-
-alert(`You go first...`)
-
-//variables begin
-persontotal = 0
-comptotal = 0
-decision = "y"
-//variables end
 
 function userTurn(){
-    //This function will contain a parameter so you can enter the random number as an argument
+	alert(`now it is your turn`)
     do{
-
-        youscore = 0
-      
-        compscore = 0
-      
-        do{      
-      
-            youscore = youscore + ran
-      
-            alert(`You drew the number ${ran}, your new total is ${youscore}`)
-      
-            if (youscore > 20) {
-              alert (` The you have exceeded the limit meaning the computer has scored`)
-              comptotal++
-              break
-            } 
-        }while (youscore<16)
-        if (youscore<=20){
-            alert("Now it is the computer's turn")
-        }
-    } 
+		var numbers = Math.floor(Math.random() * 10) + 1;
+		userNumber = userNumber + numbers;
+		alert(`The number you got was ${numbers} the new total s ${userNumber}`)
+		var play = prompt (`If you wnat to go again press “y”`)
+	}while ((userNumber <= 19) && (play == `y`))
+	return userNumber
+}
+function scores(){
+	alert(` The final score is computer: ${compNumber} and you: ${userNumber}`)
 }
 
-function computerTurn(){
-    //This function will contain a parameter so you can enter the random number as an argument
-    youscore = 0
-      
-    compscore = 0
-      
-    do{
-        compscore = compscore + ran
-      
-        alert(`The computer drew the number ${ran}, it’s new total is ${compscore}`)
-      
-        if (compscore > 20) {
-            alert (` The computer has exceeded the limit meaning you have won`)
-            persontotal++
-            break
-        }
-    }while (compscore<16)
-        
+function scoring(userNumber, compNumber){
+	if ((compNumber > 20) && (userNumber <21) && (userNumber > compNumber)) {
+		alert(`you won with a score of ${userNumber}`)
+		userScore++
+		alert (`The score is computer; ${compScore} Human; ${userScore}`)
+	} else if (( compNumber > 20 )&& (userNumber < 21) && (userNumber > compNumber)){
+	    alert(` you won with a score of ${userNumber}`)
+	    userScore++
+	    alert(`the score is computer: ${compScore} human: ${userScore}`)
+	} else if  ((compNumber < 21) && (userNumber < 21) && (compNumber > userNumber)) {
+		alert(`the computer won with a score of ${userNumber}`)
+		compScore++
+		alert(`The score is computer; ${compScore} human; ${userScore}`)
+	}else if ((compNumber<20) && (userNumber<21) && (compNumber == userNumber)){
+	    alert(`You have tied with a score of ${userNumber}`)
+	    alert(`The score is computer; ${compScore} human; ${userScore}`)
+	}
 }
 
-function compareNum(){
-//This function will container two parameters so you can enter the user number and the computer number.
-}
-
-function gameFunction(){
-    // ask the users if they want to play again
-    //master function that runs everything
-askName()
-ranNumber()
-userTurn()
-computerTurn()
-compareNum()
-
-   do{ 
-    var decision = prompt (`Do you want to play again? Press "y" for yes and “n” for no.`)
-        console.log(decision)
-    }while (decision == "y")
-}
