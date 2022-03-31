@@ -14,7 +14,8 @@ function computerNum(){
 	    compNumber = compNumber + numbers;
 	    alert(` The computer got ${numbers}. The computers new total is ${compNumber}`)
     }while (compNumber <= 16)
-return compNumber
+
+    return compNumber
 }
 
 function userTurn(){
@@ -25,6 +26,7 @@ function userTurn(){
 		alert(`The number you got was ${numbers} the new total is ${userNumber}`)
 		var play = prompt (`If you wnat to go again press “y”`)
 	}while ((userNumber <= 19) && (play == "y"))
+
 	return userNumber
 }
 function scores(){
@@ -51,4 +53,6 @@ function scoring(userNumber, compNumber){
 	    alert(`The score is computer- ${compScore} you- ${userScore}`)
 	}
 }
+userName()
 
+scoring(computerNum(), userTurn(),scores())
